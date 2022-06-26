@@ -7,7 +7,7 @@ public class Main {
 	
 	public static int solution(int n, int k, int[] arr) {
 		int answer = 0;
-
+//		--
 		return answer;
 	}	
 	
@@ -25,7 +25,7 @@ public class Main {
 		}
 		
 		System.out.println(solution(n, k, arr));
-		
+		System.out.println("테스트");
 		
 		
 	} // main
