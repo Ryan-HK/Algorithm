@@ -1,4 +1,4 @@
-package inflearn28_hashmap;
+package inflearn29_anagram_hashmap;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -33,43 +33,28 @@ C
 
 public class Main {
 	
-	public static char solution(int n, String s) {
-		char answer = ' ';
+	public static String solution(String s1, String s2) {
+		String answer = "YES";
 		
-		HashMap<Character, Integer> map = new HashMap<>();
-	
+		HashMap<Character, Integer> map1 = new HashMap<>();
+		HashMap<Character, Integer> map2 = new HashMap<>();
 		
-//		1. 반 학생 수를 map 객체에 넣는 법
-		for(char i ='A'; i<='E'; i++) {
-			map.put(i, 0);
+		for(char x : s1.toCharArray()) {
+			map1.put(x, map1.getOrDefault(x, 0) + 1);
 		}
 		
-//		2. map을 순회하여, 카운트 ++
-		
-		for(int i=0; i<s.length(); i++) {
-			if(map.containsKey(s.charAt(i))) {
-				Integer value = (Integer)map.get(s.charAt(i));
-				map.put(s.charAt(i), value + 1);
-			}
+		for(char x : s2.toCharArray()) {
+			map2.put(x,  map2.getOrDefault(x, 0) + 1);
 		}
 		
-		
-//		3. map 을 탐색하여, 최댓 값 구하기
-		Set<Character> keySet = map.keySet();
-		
-		
-		int max = 0;
-		
-		for(char key : keySet) {
-
+		for(char key : map1.keySet()) {
 			
-			if(Math.max(map.get(key), max) == map.get(key)) {
-				max = map.get(key);
-				
-				answer = key;
+			if(map1.get(key) != map2.get(key)) {
+				answer = "NO";
 			}
 		}
-	
+		
+		
 		return answer;
 	}	
 	
@@ -77,12 +62,10 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		int n = sc.nextInt();
+		String s1 = sc.next();
+		String s2 = sc.next();
 		
-		String s = sc.next();
-		
-
-		System.out.println(solution(n, s));
+		System.out.println(solution(s1, s2));
 	
 	} // main
 
