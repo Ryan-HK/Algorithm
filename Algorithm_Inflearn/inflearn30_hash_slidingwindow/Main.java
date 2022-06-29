@@ -16,10 +16,6 @@ public class Main {
 		int rt = s;
 		int lt = 0;
 		
-	
-		
-		
-		
 		while(rt <= arr.length) {
 			
 			for(int i=lt; i<rt; i++) {

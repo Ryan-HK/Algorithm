@@ -52,6 +52,8 @@ public class Main {
 			map2.put(x,  map2.getOrDefault(x, 0) + 1);
 		}
 		
+		System.out.println(map1 == map2);
+		
 		for(char key : map1.keySet()) {
 			
 			if(map1.get(key) != map2.get(key)) {
