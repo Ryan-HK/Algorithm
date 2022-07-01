@@ -9,7 +9,7 @@ import java.util.TreeSet;
 public class Main {
 	
 	public static int solution(int n, int k, int[] arr) {
-		int answer = 0;
+		int answer = -1; // 초기값을 -1로 설정한다.
 		
 		TreeSet<Integer> Tset = new TreeSet<>(Collections.reverseOrder());
 		
@@ -29,7 +29,7 @@ public class Main {
 			
 			if(count == k) {
 				answer = i;
-			} // if
+			} 
 			
 			count++;
 			
