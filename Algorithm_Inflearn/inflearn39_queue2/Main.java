@@ -5,51 +5,65 @@ import java.util.Queue;
 import java.util.Scanner;
 
 
+class Person {
+	int id;
+	int priority;
+	
+	public Person(int id, int priority) {
+		this.id = id;
+		this.priority = priority;
+	} // Constructor
+	
+} // Person
+
+
 public class Main {
 
-	public static String solution(String n, String k) {
-		Queue<Character> nQueue = new LinkedList<>();
-		Queue<Character> kQueue = new LinkedList<>();
+	public static int solution(int n, int k, int[] arr) {
+		Queue<Person> queue = new LinkedList<>();
+		int answer = 1;
 		
-		// Step.1 : Queue에 필수과목 / 수업설계 대입
-		for(int i=0; i<n.length(); i++) {
-			nQueue.add(n.charAt(i));
+		// Step.1 : queue에 Person 객체 생성
+		for(int i=0; i<n; i++) {
+			queue.add(new Person(i, arr[i]));
 		} // for
 		
-		for(int i=0; i<k.length(); i++) {
-			kQueue.add(k.charAt(i));
-		} // for
-		
-		// Step.2 : kQueue(수업설계)를 하나씩 빼면서, nQueue와 비교
-		// 
-		while(!kQueue.isEmpty()) {
+		while(!queue.isEmpty()) {
+			Person tmp = queue.poll();
 			
-			if(nQueue.isEmpty()) break;
-		
-			if(kQueue.poll() == nQueue.peek()) {
-				nQueue.poll();
+			for(Person x : queue) {
+				if(x.priority > tmp.priority) {
+					queue.add(tmp);
+					tmp = null;
+					break;
+				}
+					
+			} // enhanced-for
+			
+			if(tmp != null) {
+				if(tmp.id == k) return answer;
+				else answer++;
 			}
-			
+	
 		} // while
 		
-		// Step.3 만약 nQueue(필수과목) 이 비어 있으면 true리턴
-		if(nQueue.isEmpty()) {
-			return "YES";
-		} else {
-			return "NO";
-		}
-
+		return answer;
 	} // solution	
 	
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		String n = sc.next();
-		String k = sc.next();
+		int n = sc.nextInt();
+		int k = sc.nextInt();
 		
+		int[] arr = new int[n];
 		
-		System.out.println(solution(n, k));
+		for(int i=0; i<n; i++) {
+			arr[i] = sc.nextInt();
+		}
+		
+		System.out.println(solution(n, k, arr));
 		
 	} // main
 
