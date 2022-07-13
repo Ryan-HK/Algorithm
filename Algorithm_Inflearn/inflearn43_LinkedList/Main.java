@@ -1,4 +1,4 @@
-package inflearn43_eam;
+package inflearn43_LinkedList;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -12,7 +12,7 @@ public class Main {
 		
 		for(int i=0; i<arr.length; i++) {
 		
-			if(list.contains((Integer)arr[i])) {
+			if(list.contains(arr[i])) {
 				list.remove((Integer)arr[i]);
 				list.add(0, arr[i]);
 			} else {
