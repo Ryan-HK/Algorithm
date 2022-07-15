@@ -10,8 +10,13 @@ public class Main {
 		
 		ArrayList<Integer> answer = new ArrayList<>();
 		
-		int[] tempArr = Arrays.copyOf(arr, n);
 		
+		// 깊은 복사를 사용해야 한다.
+		// 단순 대입연산자만 사용 할 경우, 얉은 복사로
+		// 같은 객체배열을 참조하게 된다.
+		// 같은 객체 배열을 참조할 때, 정렬을 사용한다면, 값이 같게 나온다.
+		int[] tempArr = arr.clone();
+	
 		Arrays.sort(tempArr);
 		
 		
@@ -37,10 +42,9 @@ public class Main {
 			arr[i] = sc.nextInt();
 		}
 		
-		
-		
-		solution(n, arr)
-			.forEach(s -> System.out.print(s + " "));
+		for(int x : solution(n, arr)) {
+			System.out.print(x + " ");
+		}
 
 		
 	} // main
