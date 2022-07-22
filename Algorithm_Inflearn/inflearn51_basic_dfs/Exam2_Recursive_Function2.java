@@ -1,4 +1,4 @@
-package inflearn51_basic_dfs_and_bfs;
+package inflearn51_basic_dfs;
 
 public class Exam2_Recursive_Function2 {
 

@@ -1,4 +1,4 @@
-package inflearn51_basic_dfs_and_bfs;
+package inflearn51_basic_dfs;
 
 public class Exam3_Recursive_Function3 {
 
@@ -12,7 +12,6 @@ public class Exam3_Recursive_Function3 {
 	public static void main(String[] args) {
 		
 		Exam3_Recursive_Function3 T = new Exam3_Recursive_Function3();
-		
 	
 		System.out.println(T.DFS(5));
 	} // main
