@@ -10,7 +10,7 @@ import java.util.TreeSet;
 public class Main {
 	
 	public static int count(int[] arr, int capacity) {
-		System.out.println(capacity + "를 검사합니다.");
+//		System.out.println(capacity + "를 검사합니다.");
 		int cnt = 1;
 		int temp = arr[0];
 		
@@ -23,7 +23,7 @@ public class Main {
 			
 		}
 		
-		System.out.println(cnt + "를 return 합니다");
+//		System.out.println(cnt + "를 return 합니다");
 		
 		return cnt;
 		
