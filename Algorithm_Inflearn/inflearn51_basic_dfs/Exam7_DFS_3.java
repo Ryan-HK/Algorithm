@@ -18,8 +18,7 @@ public class Exam7_DFS_3 {
 		tree.root.rt = new Node(3);
 		tree.root.lt.lt = new Node(4);
 		tree.root.lt.rt = new Node(5);
-		tree.root.rt.lt = new Node(6);
-		tree.root.rt.rt = new Node(7);
+
 		
 		System.out.println(tree.DFS(0, tree.root));
 		
