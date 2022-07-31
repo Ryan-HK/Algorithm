@@ -22,6 +22,8 @@ public class Exam2_DFS_2 {
 				// 말단 노드가 최초 발견 될 때! 
 				if(cur.lt == null && cur.rt == null) return L;
 				
+				// else
+				// 말단 노드가 있다면 Q에 저장
 				if(cur.lt != null) Q.offer(cur.lt);
 				if(cur.rt != null) Q.offer(cur.rt);
 				 
@@ -29,7 +31,6 @@ public class Exam2_DFS_2 {
 			L++;
 			
 		} // while
-		
 		
 		return L;
 	} // DFS
@@ -42,7 +43,6 @@ public class Exam2_DFS_2 {
 		tree.root.rt = new Node(3);
 		tree.root.lt.lt = new Node(4);
 		tree.root.lt.rt = new Node(5);
-
 		
 		System.out.println(tree.BFS(tree.root));
 		
