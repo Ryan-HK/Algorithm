@@ -7,23 +7,24 @@ public class Main {
 	static int n;
 	static int m;
 	static int[] arr;
-	static int max;
-	static int tmp;		
+
 	
-	public void DFS(int L, int tmp) {
-		if(tmp > n) {
-			tmp -= arr[L-1];
-			max = Math.max(max, tmp);
-			return;
-		}
+	public void DFS(int L) {
 		
 		if(L == m) {
-			max = Math.max(max, tmp);
+			
+			for(int x : arr) {
+				System.out.print(x + " ");
+			}
+			
+			System.out.println();
+			
 		} else {
 			
-	
-			DFS(L+1, tmp+arr[L]);
-			DFS(L+1, tmp);
+			for(int i=1; i<=n; i++) {
+				arr[L] = i;
+				DFS(L+1);
+			}
 			
 		}
 			
@@ -38,14 +39,8 @@ public class Main {
 		m = sc.nextInt();
 		
 		arr = new int[m];
-		
-		for(int i=0; i<m; i++) {
-			arr[i] = sc.nextInt();
-		} // for
-		
-		T.DFS(0, tmp);
-				
-		System.out.println(max);
+
+		T.DFS(0);
 				
 	} // main
 
